@@ -4,12 +4,13 @@ type: heuristic
 domain: form-design
 meta_state: current
 funnel_stage: decision
+confidence: well-replicated
 created: 2026-05-08
 ---
 
 # inline validation on blur, never on keystroke
 
-The standard CRO advice "use inline validation" is correct but incomplete, because it conflates three different validation behaviors that have very different conversion outcomes. The replicated finding across audits and the published research (NN/g, Baymard) is that *on-blur* validation outperforms both alternatives, but the gap between on-blur and on-keystroke is larger than the gap between on-blur and on-submit. Many form libraries (Formik default, React Hook Form's `mode: 'onChange'`) ship with the worst behavior enabled.
+The standard CRO advice "use inline validation" is correct but incomplete, because it conflates three different validation behaviors that have very different conversion outcomes. The replicated finding across audits and the published research (NN/g, Baymard) is that on-blur validation outperforms both alternatives, but the gap between on-blur and on-keystroke is larger than the gap between on-blur and on-submit. Many form libraries (Formik default, React Hook Form's `mode: 'onChange'`) ship with the worst behavior enabled.
 
 On-keystroke validation produces a hostile experience because the validator fires before the user has finished typing. A user typing a phone number sees "invalid" after the third digit, then "invalid" after the seventh, then "valid" only after the tenth. The cognitive load of being told "wrong, wrong, wrong, OK" while typing produces measurable abandonment, and users who do complete the field report the form as "annoying" in qualitative testing. The mechanism is that validation should give feedback, not commentary, and feedback during input is interruption.
 
@@ -24,8 +25,7 @@ The principle generalizes: any UX that interrupts a user mid-action loses to one
 Source: NN/g 2009 inline-validation study (still the canonical citation), Baymard checkout-flow benchmarks, replicated across 7 form-heavy audits I have run
 
 Relevant Notes:
-- [[label-above-field-beats-placeholder-only-on-mobile]] - same family of "default form library config is wrong" issues
-- [[autofocus-on-first-field-mobile-vs-desktop]] - another form default that flips sign by context
+- (None linked yet in this demo. In the live vault this would link to label-vs-placeholder, autofocus-on-first-field, and similar form-default heuristics.)
 
 Topics:
 - [[form-design-landscape]]

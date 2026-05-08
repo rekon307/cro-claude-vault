@@ -56,3 +56,8 @@ If instrumentation is broken, the audit pauses here. Findings built on broken fu
 
 - Anything dropped during triage, with a one-line reason
 - This section is non-optional; it is the part clients re-read when they wonder why an obvious issue was not in the audit
+
+---
+
+Topics:
+- [[methodology]]

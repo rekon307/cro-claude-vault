@@ -4,8 +4,8 @@ _schema:
   applies_to: "intelligence/*-landscape.md"
   required:
     - description
-  optional:
     - type
+  optional:
     - created
   enums:
     type:
@@ -21,7 +21,9 @@ created: YYYY-MM-DD
 
 # [landscape name]
 
-[Opening synthesis paragraph: NOT "this landscape collects insights about X." Instead: "The core pattern in X is Y because Z. This matters because..." This IS thinking, not meta-description. Should read like the opening of a CRO audit section, not like a folder description.]
+[Opening synthesis paragraph: NOT "this landscape collects insights about X." Instead: "The core pattern in X is Y because Z. This matters because..." This IS thinking, not meta-description. It should read like the opening of a CRO audit section, not like a folder description.]
+
+[Second paragraph if needed: scope and adjacencies. What this landscape covers and what it does not. What links to which other landscape.]
 
 ## Core Intelligence
 
@@ -35,8 +37,8 @@ created: YYYY-MM-DD
 
 ## Active Tensions
 
-- [[insight A]] and [[insight B]] conflict because... [genuine unresolved conflict]
+- [[insight A]] and [[insight B]] conflict because... [genuine unresolved conflict, with a brief note on what would resolve it]
 
 ## Gaps
 
-[What is missing from this landscape that we know we need? Open questions, missing data, hypotheses untested.]
+[What is missing from this landscape that we know we need? Open questions, missing data, hypotheses untested. Honesty here is what makes the landscape trustworthy as a query surface.]

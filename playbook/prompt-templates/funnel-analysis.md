@@ -1,6 +1,6 @@
 # Prompt Template: Funnel Analysis
 
-For when the consultant has a fresh GA4 funnel export and wants Claude to identify the load-bearing drop and recommend where to focus the audit. This is a *triage* prompt; it produces direction, not a deliverable. The output feeds the audit-draft prompt afterward.
+For when the consultant has a fresh GA4 funnel export and wants Claude to identify the load-bearing drop and recommend where to focus the audit. This is a triage prompt; it produces direction, not a deliverable. The output feeds the audit-draft prompt afterward.
 
 ---
 

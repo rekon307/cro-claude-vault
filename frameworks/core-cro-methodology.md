@@ -8,7 +8,7 @@ created: 2026-05-08
 
 # Core CRO Methodology
 
-This file is the consultant's source of truth for *how* CRO audits are run. It is intentionally placeholder content in this demo vault. In a real engagement it gets populated during onboarding from the consultant's existing notes, slides, internal docs, or a structured extraction session.
+This file is the consultant's source of truth for how CRO audits are run. It is intentionally placeholder content in this demo vault. In a real engagement it gets populated during onboarding from the consultant's existing notes, slides, internal docs, or a structured extraction session.
 
 The methodology answers four questions:
 
@@ -43,4 +43,9 @@ Below is a generic skeleton. Replace each section during onboarding.
 
 ## Deliverable shape
 
-See the audit-draft prompt template in `playbook/prompt-templates/cro-audit-draft.md`.
+See the audit-draft prompt template in `playbook/prompt-templates/cro-audit-draft.md` and the demo deliverable at `engagements/_example-client/deliverables/2026-05-08-audit-draft.md`.
+
+---
+
+Topics:
+- [[methodology]]

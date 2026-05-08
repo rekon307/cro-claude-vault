@@ -14,11 +14,8 @@ This landscape carries the mobile-specific mechanics. Form behaviors that flip s
 
 ## Core Intelligence
 
-- [[mobile-thumb-reach-and-tap-target-failure-rates]] - the bottom-third zone (thumb-reach) is undermonetized on most sites; CTA placement and sticky-bar logic should follow this
-- [[layout-shift-on-keyboard-pop-invisible-in-ga4]] - this is the single most consequential mobile issue I have ever quantified, and it does not show up in standard funnel reports because the failed tap is recorded as engagement, not abandonment
-- [[sticky-add-to-cart-vs-sticky-nav-conflict]] - both belong on mobile, but they conflict for screen real estate; the resolution depends on funnel stage
-- [[ios-safari-viewport-units-bug-affects-cta-positioning]] - vh units behave differently in Safari on iOS; CTAs anchored with vh end up partly hidden behind the address bar on a measurable fraction of sessions
-- [[mobile-page-weight-conversion-elasticity]] - mobile conversion is more page-weight elastic than desktop in every audit I have run, and the most common offender is third-party tag bloat, not images
+- [[mobile-thumb-reach-and-tap-target-failure-rates]] - the bottom-third zone is undermonetized on most sites; CTA placement and sticky-bar logic should follow this
+- [[layout-shift-on-keyboard-pop-invisible-in-ga4]] - the single most consequential mobile issue I have ever quantified, and it does not show up in standard funnel reports because the failed tap is recorded as engagement, not abandonment
 
 ## Cross-Domain Connections
 
@@ -27,7 +24,7 @@ This landscape carries the mobile-specific mechanics. Form behaviors that flip s
 
 ## Active Tensions
 
-- [[sticky-add-to-cart-vs-sticky-nav-conflict]] has no clean resolution. The data supports both depending on funnel stage. This is the kind of tension that should be tested per-engagement rather than answered with a global heuristic.
+- Sticky add-to-cart vs sticky nav has no clean resolution. The data supports both depending on funnel stage. This is the kind of tension that should be tested per-engagement rather than answered with a global heuristic.
 
 ## Gaps
 

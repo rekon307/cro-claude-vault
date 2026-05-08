@@ -6,8 +6,9 @@ _schema:
     - description
     - status
     - vertical
-  optional:
     - client_alias
+    - created
+  optional:
     - engagement_type
     - start_date
     - end_date
@@ -16,6 +17,7 @@ _schema:
     - data_access
     - reporting_cadence
     - linked_landscapes
+    - modified
   enums:
     status:
       - intake
@@ -45,6 +47,7 @@ description: ""
 status: intake
 vertical: ""
 client_alias: ""
+engagement_type: ""
 created: YYYY-MM-DD
 ---
 
@@ -60,11 +63,15 @@ created: YYYY-MM-DD
 
 ## Primary Goals
 
-[The 1-3 outcomes the client is paying for. Phrased as their problem, not your deliverable.]
+[The 1-3 outcomes the client is paying for. Phrased in their language, not as your deliverables.]
 
 ## Key Constraints
 
 [Brand voice rules, legal constraints, dev resource limits, test platform, prior tests run. Anything that disqualifies a recommendation before it gets written.]
+
+## Reporting Cadence
+
+[Weekly status, monthly retro, ad-hoc, etc. Who's on the call, what they read first.]
 
 ## Linked Findings
 
@@ -73,3 +80,12 @@ created: YYYY-MM-DD
 ## Linked Tests
 
 - [[engagements/CLIENT/tests/test-name]]
+
+## Linked Deliverables
+
+- [[engagements/CLIENT/deliverables/YYYY-MM-DD-audit-draft]]
+
+---
+
+Topics:
+- [[engagements/CLIENT]]

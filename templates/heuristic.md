@@ -1,18 +1,23 @@
 ---
 _schema:
   entity_type: "heuristic"
-  applies_to: "frameworks/heuristics/*.md"
+  applies_to: "intelligence/*.md (with type: heuristic)"
   required:
     - description
+    - type
     - domain
+    - meta_state
     - confidence
+    - created
   optional:
     - sources
     - counterexamples
     - related_principle
-    - created
+    - vertical_dependence
     - modified
   enums:
+    type:
+      - heuristic
     domain:
       - checkout-friction
       - form-design
@@ -28,13 +33,20 @@ _schema:
       - context-dependent
       - emerging
       - personal-experience-only
+    meta_state:
+      - current
+      - stale
+      - closed
+      - speculative
   constraints:
     description:
       format: "One sentence stating the principle as a rule, not a description"
 
 description: ""
+type: heuristic
 domain: ""
 confidence: ""
+meta_state: current
 created: YYYY-MM-DD
 ---
 
@@ -59,3 +71,10 @@ created: YYYY-MM-DD
 ## Related Principles
 
 - [[other-heuristic]] - extends or constrains this
+
+---
+
+Source: [[source citation]]
+
+Topics:
+- [[relevant-landscape]]

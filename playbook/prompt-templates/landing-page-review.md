@@ -33,7 +33,7 @@ Review the page against the relevant vault landscapes. Specifically check:
 2. CTA placement against [[mobile-thumb-reach-and-tap-target-failure-rates]] for the mobile share
 3. Form mechanics if present, against [[form-design-landscape]]
 4. Trust signals against [[social-proof-landscape]] if relevant
-5. Page weight and load mechanics against [[mobile-page-weight-conversion-elasticity]] for mobile-heavy traffic
+5. Page weight and load mechanics for mobile-heavy traffic
 
 For each finding:
 - Observation

@@ -3,12 +3,13 @@ description: GA4 default ecommerce event names diverge from platform-emitted nam
 type: pattern
 domain: analytics-instrumentation
 meta_state: current
+confidence: directly-measured
 created: 2026-05-08
 ---
 
 # GA4 funnel step mismatch between UA-converted clients and platform-emitted event naming
 
-Most clients with funnel-report problems do not have a behavior problem. They have an event-naming problem. GA4's recommended event schema for ecommerce (`begin_checkout`, `add_shipping_info`, `add_payment_info`, `purchase`) does not match what Shopify, WooCommerce, and BigCommerce emit out of the box. Shopify in particular emits a checkout_started event that looks correct but does not populate the `add_shipping_info` step at all unless the developer explicitly fires that event in the address-step page, which most installs do not. The funnel report then shows a clean drop from `begin_checkout` directly to `purchase`, which is uninformative.
+Most clients with funnel-report problems do not have a behavior problem. They have an event-naming problem. GA4's recommended event schema for ecommerce (`begin_checkout`, `add_shipping_info`, `add_payment_info`, `purchase`) does not match what Shopify, WooCommerce, and BigCommerce emit out of the box. Shopify in particular emits a `checkout_started` event that looks correct but does not populate the `add_shipping_info` step at all unless the developer explicitly fires that event in the address-step page, which most installs do not. The funnel report then shows a clean drop from `begin_checkout` directly to `purchase`, which is uninformative.
 
 This is the analytics version of [[layout-shift-on-keyboard-pop-invisible-in-ga4]]: the actual signal is recoverable, but the default instrumentation hides it. The standard CRO consequence is that the audit team looks at the funnel, sees no actionable step, and writes a deliverable focused on cart-page or product-page interventions. The actual highest-leverage step (the address step, per [[abandonment-curve-steepest-cart-to-address-not-address-to-payment]]) is invisible because no event fires there.
 
@@ -25,5 +26,5 @@ Relevant Notes:
 - [[abandonment-curve-steepest-cart-to-address-not-address-to-payment]] - the finding that this instrumentation gap typically conceals
 
 Topics:
-- [[analytics-instrumentation-landscape]]
+- [[mobile-ux-landscape]]
 - [[checkout-friction-landscape]]

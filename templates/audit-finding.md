@@ -7,6 +7,8 @@ _schema:
     - severity
     - confidence
     - domain
+    - status
+    - created
   optional:
     - client
     - page_or_flow
@@ -17,8 +19,6 @@ _schema:
     - linked_heuristic
     - linked_pattern
     - recommended_test
-    - status
-    - created
     - modified
   enums:
     severity:
@@ -68,15 +68,15 @@ created: YYYY-MM-DD
 
 ## Observation
 
-[What the data shows. Be specific. Numbers, segments, devices, traffic sources. Show the path from raw data to the conclusion. Reference the GA4/Looker query or screenshot. If heuristic-only, say so explicitly.]
+[What the data shows. Be specific. Numbers, segments, devices, traffic sources. Show the path from raw data to the conclusion. Reference the GA4/Looker query or screenshot. If `confidence: heuristic-only`, say so explicitly here.]
 
 ## Why It Matters
 
 [Connect the observation to revenue, conversion rate, or experience. Quantify if possible: "this segment is X% of sessions and converts at Y vs site average Z, so the gap represents ~$N/month in lost revenue at current AOV." Do not invent numbers.]
 
-## Linked Heuristic / Framework
+## Linked Heuristic / Pattern
 
-- [[heuristic-name]] - the CRO principle this finding violates
+- [[heuristic-name]] - the CRO principle this finding violates or supports
 - [[pattern-name]] - the recurring pattern this fits
 
 ## Recommended Test
@@ -86,3 +86,9 @@ created: YYYY-MM-DD
 ## Notes for the Audit Draft
 
 [How this finding should be framed in the deliverable. Tone, supporting visuals, level of technical detail for this client.]
+
+---
+
+Topics:
+- [[engagements/CLIENT/index]]
+- [[relevant-landscape]]

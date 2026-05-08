@@ -4,29 +4,29 @@ _schema:
   applies_to: "intelligence/*.md"
   required:
     - description
-    - domain
-  optional:
     - type
+    - domain
     - meta_state
     - created
-    - modified
-    - client
+  optional:
     - vertical
-    - traffic_source
-    - device
     - funnel_stage
-    - alternatives
+    - device
+    - traffic_source
+    - client
+    - confidence
     - rationale
     - status
     - superseded_by
     - outcome
   enums:
     type:
-      - insight
       - heuristic
+      - insight
       - audit-finding
       - pattern
-      - experiment
+      - framework
+      - test-result
       - tension
       - methodology
     domain:
@@ -44,15 +44,27 @@ _schema:
       - stale
       - closed
       - speculative
+    vertical:
+      - ecommerce-dtc
+      - saas-self-serve
+      - saas-sales-led
+      - lead-gen
+      - marketplace
+      - subscription
+      - other
     funnel_stage:
       - awareness
       - consideration
       - decision
       - retention
-    outcome:
-      - validated
-      - invalidated
-      - inconclusive
+    confidence:
+      - directly-measured
+      - inferred-from-data
+      - heuristic-only
+      - well-replicated
+      - context-dependent
+      - emerging
+      - personal-experience-only
   constraints:
     description:
       max_length: 200
@@ -69,7 +81,7 @@ created: YYYY-MM-DD
 
 # prose-as-title proposition about the CRO observation
 
-[Body: 150-400 words showing reasoning. Use connective words: because, but, therefore, which means, however. Show the path to the conclusion, not just the conclusion. Acknowledge uncertainty. Consider strongest counterargument. Invoke other insights as prose, e.g. "this fits the broader pattern noted in [[mobile-checkout-abandonment-on-shipping-step]]".]
+[Body: 150-400 words showing reasoning. Use connective words: because, but, therefore, which means, however. Show the path to the conclusion, not just the conclusion. Acknowledge uncertainty. Consider the strongest counterargument. Invoke other insights as prose, e.g. "this fits the broader pattern noted in [[mobile-checkout-abandonment-on-shipping-step]]".]
 
 ---
 

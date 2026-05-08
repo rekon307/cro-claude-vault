@@ -1,0 +1,115 @@
+# CRO Consulting Practice - Knowledge System Configuration
+# Edit this file to adjust system behavior. Changes take effect on next session start.
+# See ops/derivation.md for the rationale behind these settings.
+
+# ─── GRANULARITY ────────────────────────────────────────────────
+# Controls: how fine-grained insights are. "One idea per note" strictness.
+# Values: atomic | moderate | contextual
+granularity: atomic
+
+# ─── ORGANIZATION ────────────────────────────────────────────────
+# Controls: folder depth for intelligence/
+# Values: flat | hierarchical
+organization: flat
+
+# ─── LINKING STYLE ───────────────────────────────────────────────
+# Controls: how connections are created and annotated
+# Values: explicit | implicit | explicit+implicit
+# Note: explicit+implicit means cross-domain connections get [CROSS-DOMAIN:] labels
+linking: explicit+implicit
+
+# ─── PROCESSING DEPTH ────────────────────────────────────────────
+# Controls: pipeline quality vs speed trade-off
+# Values: deep | standard | quick
+# deep: fresh context per phase, maximum quality gates
+# standard: full pipeline, balanced attention (default)
+# quick: compressed pipeline, combine phases, high-volume catch-up
+processing: standard
+
+# ─── NAVIGATION ──────────────────────────────────────────────────
+# Controls: vault hierarchy depth
+# Values: direct | 2-tier | 3-tier
+# 3-tier: hub → landscape → insight
+navigation: 3-tier
+
+# ─── MAINTENANCE ─────────────────────────────────────────────────
+# Controls: staleness thresholds and condition-based triggers
+# Values: relaxed | standard | tight
+# tight: 90-day heuristic threshold, 30-day audit-finding threshold, 7-day incoming/ threshold
+maintenance: tight
+
+# ─── SCHEMA DENSITY ──────────────────────────────────────────────
+# Controls: how strict frontmatter validation is
+# Values: minimal | moderate | dense
+# dense: required fields per note type, enum validation, format constraints
+schema: dense
+
+# ─── AUTOMATION ──────────────────────────────────────────────────
+# Controls: hook-driven automation level
+# Values: manual | convention | full
+# full: SessionStart, PostToolUse, SessionEnd hooks all active
+automation: full
+
+# ─── FEATURES ────────────────────────────────────────────────────
+features:
+  semantic_search: true       # qmd / vector search across the intelligence collection
+  processing_pipeline: true   # /pipeline orchestration of extract → connect → verify
+  sleep_processing: false     # background processing of incoming/ during idle (manual gate)
+  voice_capture: false
+
+# ─── PROCESSING ──────────────────────────────────────────────────
+processing_tier: auto         # auto | 1 | 2 | 3 | 4
+
+processing_settings:
+  depth: standard             # deep | standard | quick
+  chaining: suggested         # manual | suggested | automatic
+  extraction:
+    selectivity: moderate     # strict | moderate | permissive
+    categories: auto          # auto (from derivation) | custom list
+  verification:
+    description_test: true
+    schema_check: true
+    link_check: true
+  reweave:
+    scope: related            # related | broad | full
+    frequency: after_create   # after_create | periodic | manual
+
+# ─── PROVENANCE ──────────────────────────────────────────────────
+# Controls: how source material is tracked for each insight
+# Values: full | minimal | off
+provenance: full
+
+# ─── PERSONALITY ─────────────────────────────────────────────────
+personality:
+  enabled: true
+  warmth: clinical
+  opinionatedness: opinionated
+  formality: professional-casual
+  emotional_awareness: task-focused
+
+# ─── RESEARCH TOOLS ──────────────────────────────────────────────
+research:
+  primary: web-search          # web-search | exa-deep-research | exa-web-search
+  fallback: web-search
+  last_resort: web-search
+  default_depth: moderate      # light | moderate | deep
+
+# ─── MAINTENANCE THRESHOLDS ──────────────────────────────────────
+# Triggers for condition-based maintenance. /next reads these to decide what to surface.
+thresholds:
+  heuristic_stale_days: 90              # `meta_state: current` heuristics not modified in 90 days flag for review
+  audit_finding_stale_days: 30          # in-flight audit findings not updated in 30 days surface for status check
+  incoming_stale_days: 7                # raw exports in incoming/ unprocessed for 7 days flag for /pipeline run
+  observation_review_threshold: 10      # pending observations cross 10, surface /reassess
+  tension_review_threshold: 5           # pending tensions cross 5, surface /reassess
+  orphan_note_warning_count: 3          # 3 or more orphan insights, run /graph
+
+# ─── CRO-SPECIFIC SETTINGS ───────────────────────────────────────
+# Custom settings for the CRO practice domain.
+cro_practice:
+  default_audit_template: playbook/prompt-templates/cro-audit-draft.md
+  default_engagement_root: engagements/
+  vertical_default: ecommerce-dtc
+  confidence_label_required_for_delivery: true   # block deliverables that have unlabeled claims
+  instrumentation_check_required: true           # block audits that skip the instrumentation pre-check
+  benchmark_age_warning_days: 540                # 18 months - flag benchmark notes older than this

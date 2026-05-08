@@ -1,10 +1,10 @@
 # Export-to-Report Workflow
 
-This is the procedure that turns a Looker Studio export plus a CRO engagement into a structured audit draft. It is the workflow Claude follows; it is also the workflow the consultant runs end-to-end.
+This is the procedure that turns a Looker Studio export plus a CRO engagement into a structured audit draft. It is the workflow Claude follows when invoked with this vault loaded; it is also the workflow the consultant runs end-to-end.
 
 ## When to run this
 
-- Start of a new engagement (intake -> first audit draft)
+- Start of a new engagement (intake → first audit draft)
 - Mid-engagement, when new data lands (e.g. a fresh month of GA4 data)
 - Before a recurring report cycle (monthly check-in, retainer deliverables)
 
@@ -12,7 +12,7 @@ This is the procedure that turns a Looker Studio export plus a CRO engagement in
 
 1. **Engagement context** - the engagement file at `engagements/{client_alias}/index.md`. If it does not exist, create it from `templates/client-engagement.md` first.
 2. **Data export(s)** - one or more CSVs from Looker Studio, dropped into `engagements/{client_alias}/data/{date}/`
-3. **The relevant landscape MOCs** - Claude reads these as part of the standard CLAUDE.md load order
+3. **The relevant landscape MOCs** - Claude reads these as part of the standard `CLAUDE.md` load order
 
 ## Steps
 
@@ -23,7 +23,7 @@ Open or create `engagements/{client_alias}/index.md`. Confirm:
 - Vertical
 - Primary goals (the client's, in their language)
 - Key constraints (brand voice, dev resources, test platform, prior tests)
-- Data access (what GA4 property, what Looker dashboards, what session-replay tool)
+- Data access (which GA4 property, which Looker dashboards, which session-replay tool)
 
 If any of these are missing, ask the consultant before running the audit. An audit run on guessed context is not deliverable.
 
@@ -76,9 +76,9 @@ The draft is a draft. The consultant reads it, rewrites the framing, removes `he
 
 After the deliverable ships:
 
-- New heuristics -> `frameworks/heuristics/`
-- New patterns -> `intelligence/`
-- Engagement state -> update `engagements/{client_alias}/index.md` (status, linked findings, linked tests)
+- New heuristics → `intelligence/` with `type: heuristic`
+- New patterns → `intelligence/` with `type: pattern`
+- Engagement state → update `engagements/{client_alias}/index.md` (status, linked findings, linked tests)
 - If the engagement surfaced a tension that contradicts an existing heuristic, mark the existing note `meta_state: stale` and link forward to the new one
 
 ## Outputs

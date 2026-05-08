@@ -1,15 +1,13 @@
 # Prompt Template: CRO Audit Draft
 
-This is the prompt the consultant pastes into Claude (or invokes via API) when they have a Looker Studio export ready and want a structured audit draft against the vault.
-
-The prompt assumes the vault's CLAUDE.md is already loaded as the system prompt. If running ad-hoc without the vault loaded, prepend the contents of `/CLAUDE.md` first.
+This is the prompt the consultant invokes when they have a Looker Studio export ready and want a structured audit draft against the vault. The vault's `CLAUDE.md` is loaded as the system prompt; this is the user-message input.
 
 ---
 
 ## Prompt
 
 ```
-You are operating the CRO knowledge vault as defined in CLAUDE.md. Run the export-to-report workflow against the data and engagement below.
+Run the export-to-report workflow against the data and engagement below.
 
 ## Engagement
 
@@ -65,4 +63,6 @@ Write the draft to engagements/{client_alias}/deliverables/{date}-audit-draft.md
 - This prompt is intentionally rigid. The rigidity is what produces consistent output across engagements.
 - The first time you run it on a new client, the output will surface gaps in the engagement file (missing constraints, missing data access detail). Fix those in the engagement file, then re-run.
 - The "Out of scope" section is non-optional. Clients re-read it more often than the executive summary.
-- If Claude produces a finding without a `[[wiki-link]]` to a heuristic, that is a flag: either add the heuristic to the vault or treat the finding as speculative.
+- If a finding lands without a `[[wiki-link]]` to a heuristic, that is a flag: either add the heuristic to the vault or treat the finding as speculative.
+
+See the demo deliverable at `engagements/_example-client/deliverables/2026-05-08-audit-draft.md` for the output shape.
