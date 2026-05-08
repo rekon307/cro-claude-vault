@@ -1,0 +1,27 @@
+# Real engagement data should never be committed
+engagements/
+data/
+*.csv
+*.xlsx
+*.pdf
+
+# Local Obsidian state
+.obsidian/workspace*
+.obsidian/plugins/
+.obsidian/snippets/
+.obsidian/themes/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
